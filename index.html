@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hujjat Bin Maswood | CSE Student Portfolio</title>
+<meta name="description" content="Hujjat Bin Maswood, CSE undergraduate at IIUC. I build projects that solve real-life problems.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌅%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div><div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+<header>
+ <div class="wrap bar">
+  <a class="brand" href="#top">Hujjat<span>.</span></a>
+  <nav aria-label="Main">
+   <a href="#about">About</a>
+   <a href="#projects">Projects</a>
+   <a href="#skills">Skills</a>
+   <a href="#contact">Contact</a>
+   <a class="gh" href="https://github.com/hujjat22">GitHub</a>
+  </nav>
+ </div>
+ <div id="prog"></div>
+</header>
+
+<main id="top">
+ <section class="hero wrap">
+  <div class="hero-text">
+   <p class="hi greeting">Hi, I’m</p>
+   <h1 id="name" aria-label="Hujjat Bin Maswood">Hujjat Bin Maswood</h1>
+   <p class="intro rv" style="--d:.9s">Computer Science and Engineering student at IIUC, interested in thoughtful software and practical solutions for everyday problems.</p>
+   <ul class="chips rv" style="--d:1.05s">
+    <li>IIUC · CSE</li>
+    <li>Web development</li>
+    <li>Projects with purpose</li>
+   </ul>
+   <div class="cta rv" style="--d:1.2s">
+    <a class="btn main mag" href="#projects">View my work</a>
+    <a class="btn mag" href="#contact">Contact me</a>
+   </div>
+  </div>
+  <div class="hero-art rv" style="--d:.4s">
+   <div class="photo" id="photo-wrap">
+    <img id="photo" src="image/profile.jpg" alt="Portrait of Hujjat Bin Maswood">
+   </div>
+  </div>
+ </section>
+
+ <div class="mq" aria-hidden="true">
+  <div class="mt">BUILD WITH PURPOSE — MAKE IT USEFUL — SWEAT THE DETAILS —</div>
+ </div>
+
+ <section id="about" class="wrap">
+  <p class="label rv">Who I am</p>
+  <h2 class="rv">About Me</h2>
+  <p class="words" id="words">I turn everyday frustrations into useful projects: a travel guide that helps visitors avoid overpaying, a practice space for students who freeze before a viva, a daily message for a hard day. I start with the problem, then learn whatever the build demands.</p>
+
+  <div class="tl" id="tl">
+   <div class="tl-fill" id="tlfill"></div>
+
+   <article class="ti">
+    <i class="nd"></i>
+    <div class="tc">
+     <span>The person</span>
+     <h3>Hujjat Bin Maswood</h3>
+     <p>I’m a Computer Science and Engineering undergraduate at International Islamic University Chittagong, from Cox’s Bazar, Bangladesh. What drives me is building things that solve real-life problems.</p>
+    </div>
+   </article>
+
+   <article class="ti r">
+    <i class="nd"></i>
+    <div class="tc">
+     <span>First projects</span>
+     <h3>Learning to think in C</h3>
+     <p>I started with C and C++. My first-semester project, Traffic Dodge, is a console car-dodging game that turned loops, arrays and logic into something I could actually play.</p>
+    </div>
+   </article>
+
+   <article class="ti">
+    <i class="nd"></i>
+    <div class="tc">
+     <span>Building with hardware</span>
+     <h3>Hardware that works alone</h3>
+     <p>For an EEE course I built the Auto Car Parking Gate, a smart system that uses sensors and automation to control vehicle entry and exit without anyone standing there.</p>
+    </div>
+   </article>
+
+   <article class="ti r">
+    <i class="nd"></i>
+    <div class="tc">
+     <span>The web</span>
+     <h3>HTML, CSS and JavaScript</h3>
+     <p>My profile site came first, then Everyday, a daily-message site, and Cox’s Bazar Unfiltered, a travel guide with a budget planner, saved places and live weather for the sea.</p>
+    </div>
+   </article>
+
+   <article class="ti">
+    <i class="nd"></i>
+    <div class="tc">
+     <span>Frameworks and APIs</span>
+     <h3>React, Vite and real data</h3>
+     <p>With Anime Index I moved to React and Vite, loading shows from the public TVMaze API, adding search, and saving favorites in the browser with localStorage.</p>
+    </div>
+   </article>
+
+   <article class="ti r">
+    <i class="nd"></i>
+    <div class="tc">
+     <span>Right now</span>
+     <h3>What comes next</h3>
+     <p>I keep exploring ideas that connect software to everyday needs, learning from each project and improving the way I design and build.</p>
+    </div>
+   </article>
+  </div>
+
+  <div class="facts">
+   <div class="fact rv"><small>University</small><b>IIUC</b></div>
+   <div class="fact rv" style="--d:.08s"><small>Department</small><b>Computer Science and Engineering</b></div>
+   <div class="fact rv" style="--d:.16s"><small>Based in</small><b>Bangladesh</b></div>
+   <div class="fact rv" style="--d:.24s"><small>Focus</small><b>Useful, people-first software</b></div>
+   <div class="fact rv" style="--d:.32s"><small>From</small><b>Cox’s Bazar, Bangladesh</b></div>
+   <div class="fact rv" style="--d:.4s"><small>Everyday tools</small><b>Git, GitHub, VS Code</b></div>
+  </div>
+ </section>
+
+ <section id="projects" class="wrap">
+  <p class="label rv">What I’ve built</p>
+  <h2 class="rv">Featured Projects</h2>
+  <p class="sub rv">Selected work, with the details behind each build.</p>
+  <div class="filters project-filters" role="group" aria-label="Filter projects"><button type="button" class="active" data-filter="all">All</button><button type="button" data-filter="hardware">Hardware &amp; EEE</button><button type="button" data-filter="web">Web</button><button type="button" data-filter="code">C Programming</button></div><div class="project-carousel" id="project-carousel" aria-label="Featured project carousel"><button class="carousel-nav previous" id="project-prev" type="button" aria-label="Previous project"><span aria-hidden="true">←</span><small>PREV</small></button><div class="project-stage" id="stack" tabindex="0" aria-live="polite"></div><button class="carousel-nav next" id="project-next" type="button" aria-label="Next project"><span aria-hidden="true">→</span><small>NEXT</small></button></div><div class="project-tabs" id="project-tabs" role="tablist" aria-label="Choose a project"></div><div class="project-count" id="project-count" aria-live="polite">01 / 07</div>
+ </section>
+
+ <div class="mq rev" aria-hidden="true">
+  <div class="mt">C — C++ — Java — JavaScript — React — HTML — CSS — Git —</div>
+ </div>
+
+ <section id="skills" class="wrap">
+  <p class="label rv">Tools of the trade</p>
+  <h2 class="rv">What I Work With</h2>
+  <p class="sub rv">A toolkit for building and shipping on the web.</p>
+  <div class="legend rv">
+   <span style="--h:20">Languages</span>
+   <span style="--h:170">Web</span>
+   <span style="--h:260">Tools</span>
+   <span style="--h:330">Exploring</span>
+  </div>
+  <div class="field rv" id="field" aria-label="A collection of programming languages, web technologies, and tools"></div>
+ </section>
+
+ <div class="mq" aria-hidden="true"><div class="mt">Say hi — Got a problem? — Let’s solve it —</div></div>
+ <div class="mq rev" aria-hidden="true"><div class="mt">Drop a message — Let’s build —</div></div>
+
+ <section id="contact" class="wrap contact">
+  <p class="label rv">Get in touch</p>
+  <h2 class="rv">Start a Conversation</h2>
+  <p class="sub rv">Got a problem worth solving, a project idea, or feedback on Speak Up? Write to me and I’ll reply.</p>
+  <a class="btn main mag rv" href="mailto:hujjat07@gmail.com">Email me directly →</a>
+
+  <div class="links rv">
+   <a class="lk" href="mailto:hujjat07@gmail.com">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    <span><b>Email</b><small>hujjat07@gmail.com</small></span>
+   </a>
+   <a class="lk" href="https://github.com/hujjat22">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+    <span><b>GitHub</b><small>github.com/hujjat22</small></span>
+   </a>
+  </div>
+
+  <form class="cform rv" id="cform" autocomplete="off">
+   <label>Your name<input id="fn" required maxlength="80" placeholder="Your name"></label>
+   <label>Your email<input id="fe" type="email" required maxlength="120" placeholder="you@example.com"></label>
+   <label class="full">Message<textarea id="fm" required rows="5" maxlength="1500" placeholder="Tell me what you have in mind"></textarea></label>
+   <button class="btn main" type="submit">Send message →</button>
+   <p id="fstat" role="status">This opens your email app with the message ready to send.</p>
+  </form>
+ </section>
+</main>
+
+<footer>
+ <div class="wrap foot">
+  <span>© 2026 Hujjat Bin Maswood</span>
+  <span><a href="#top">Back to top</a> · <a href="https://github.com/hujjat22">GitHub</a></span>
+ </div>
+</footer>
+<dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title"><button class="dialog-close" type="button" aria-label="Close project details">×</button><p class="dialog-kicker" id="dialog-kicker"></p><h2 id="dialog-title"></h2><p class="dialog-summary" id="dialog-summary"></p><h3>What it includes</h3><ul id="dialog-features"></ul><div class="dialog-stack" id="dialog-stack"></div><div class="dialog-links" id="dialog-links"></div></dialog>
+</body>
+</html>
