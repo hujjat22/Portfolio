@@ -251,7 +251,7 @@
     return '<div class="project-visual pv-mini" aria-hidden="true"><div class="browser-mock"><div class="browser-bar"><i></i><i></i><i></i></div><div class="browser-body"><span>HELLO, I’M</span><b>Hujjat<br>Bin Maswood</b><em>PORTFOLIO · FIRST BUILD</em></div></div><small>FIRST WEBSITE</small></div>';
   }
   var dialog=document.getElementById("project-dialog"), dialogFeatures=document.getElementById("dialog-features");
-  function openDetails(p){var d=detailData[p.t]||{summary:p.built,features:[]};document.getElementById("dialog-kicker").textContent=p.tag+" · PROJECT DETAILS";document.getElementById("dialog-title").textContent=p.t;document.getElementById("dialog-summary").textContent=d.summary;dialogFeatures.replaceChildren();d.features.forEach(function(item){var li=document.createElement("li");li.textContent=item;dialogFeatures.appendChild(li);});var chips=document.getElementById("dialog-stack");chips.replaceChildren();p.stack.forEach(function(item){var chip=document.createElement("span");chip.textContent=item;chips.appendChild(chip);});var links=document.getElementById("dialog-links");links.replaceChildren();p.links.forEach(function(link){var a=document.createElement("a");a.href=link[1];a.textContent=link[0]+" ↗";a.target="_blank";a.rel="noopener";links.appendChild(a);});dialog.showModal();}
+  function openDetails(p){var d=detailData[p.t]||{summary:p.built,features:[]};document.getElementById("dialog-kicker").textContent=p.tag+" · PROJECT DETAILS";document.getElementById("dialog-title").textContent=p.t;document.getElementById("dialog-summary").textContent=d.summary;document.getElementById("dialog-problem").textContent=p.problem;document.getElementById("dialog-built").textContent=p.built;dialogFeatures.replaceChildren();d.features.forEach(function(item){var li=document.createElement("li");li.textContent=item;dialogFeatures.appendChild(li);});var chips=document.getElementById("dialog-stack");chips.replaceChildren();p.stack.forEach(function(item){var chip=document.createElement("span");chip.textContent=item;chips.appendChild(chip);});var links=document.getElementById("dialog-links");links.replaceChildren();p.links.forEach(function(link){var a=document.createElement("a");a.href=link[1];a.textContent=link[0]+" ↗";a.target="_blank";a.rel="noopener";links.appendChild(a);});dialog.showModal();}
 
   /* Create the stacking project cards. */
   var stack = $("#stack");
@@ -285,6 +285,8 @@
       (p.note ? '<p class="note">' + p.note + "</p>" : "") +
       '<div class="project-actions"><button class="details-trigger" type="button">Project details <span>↗</span></button></div>' +
       "</div>";
+
+    c.querySelector(".details-trigger").addEventListener("click",function(e){e.stopPropagation();openDetails(p);});
 
     var repoLink = p.links.filter(function (l) {
       return l[1].indexOf("github.com/") !== -1;
@@ -342,7 +344,7 @@
   });
 
   var carousel=document.getElementById("project-carousel"), tabs=document.getElementById("project-tabs"), count=document.getElementById("project-count"), previousButton=document.getElementById("project-prev"), nextButton=document.getElementById("project-next");
-  var category="all", current=0, touchStartX=0, touchStartY=0, enterDirection=1;
+  var category="all", current=0, touchStartX=null, touchStartY=0, enterDirection=1;
   var stageResize=new ResizeObserver(function(){syncStageHeight();});
   function filteredCards(){return cards.filter(function(card){return category==="all"||card.dataset.kind===category;});}
   function syncStageHeight(){var active=cards[current];if(active){stack.style.height=Math.ceil(active.getBoundingClientRect().height)+"px";}}
@@ -367,8 +369,9 @@
   previousButton.addEventListener("click",function(){moveProject(-1);});nextButton.addEventListener("click",function(){moveProject(1);});
   $$(".project-filters button").forEach(function(button){button.addEventListener("click",function(){category=button.dataset.filter;var active=$(".project-filters .active");if(active)active.classList.remove("active");button.classList.add("active");selectProject(0,1,true);});});
   carousel.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();moveProject(1);}else if(e.key==="ArrowLeft"){e.preventDefault();moveProject(-1);}});
-  carousel.addEventListener("pointerdown",function(e){if(e.target.closest("button,a"))return;touchStartX=e.clientX;touchStartY=e.clientY;});
-  carousel.addEventListener("pointerup",function(e){var dx=e.clientX-touchStartX,dy=e.clientY-touchStartY;if(Math.abs(dx)>48&&Math.abs(dx)>Math.abs(dy)*1.25)moveProject(dx<0?1:-1);});
+  carousel.addEventListener("pointerdown",function(e){if(e.target.closest("button,a")){touchStartX=null;return;}touchStartX=e.clientX;touchStartY=e.clientY;});
+  carousel.addEventListener("pointerup",function(e){if(touchStartX===null)return;var dx=e.clientX-touchStartX,dy=e.clientY-touchStartY;touchStartX=null;if(Math.abs(dx)>48&&Math.abs(dx)>Math.abs(dy)*1.25)moveProject(dx<0?1:-1);});
+  carousel.addEventListener("pointercancel",function(){touchStartX=null;});
   addEventListener("resize",syncStageHeight);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(syncStageHeight);selectProject(0,1,false);
 
   /* Scroll progress, text reveal and timeline. */
